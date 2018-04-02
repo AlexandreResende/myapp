@@ -1,20 +1,30 @@
 
-import React, { Component } from 'react'
-import { AppRegistry, Text, View } from 'react-native'
+import React, { Component } from 'react';
+import { AppRegistry, Text, View } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
-import Component3 from './app/components/Component3/Component3'
+import Component5 from './app/components/Component5/Component5'
+import Component6 from './app/components/Component6/Component6'
+
+const App = StackNavigator({
+  Home: { screen: Component5 },
+  Profile: { screen: Component6},
+});
 
 export default class MyApp extends Component {
+  static navigationOptions = {
+    title: 'Home',
+  };
+  
   render() {
+    const { navigation } = this.props;
     return(
-      <View>
-        <Component3></Component3>
-      </View>
+      <App navigation={ navigation } />
     );
   }
 }
 
-AppRegistry.registerComponent('MyApp', () => MyApp);
+AppRegistry.registerComponent('MyApp', () => App);
 
 /**
  * Sample React Native App
