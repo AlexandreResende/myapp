@@ -30,22 +30,18 @@ class Component5 extends React.Component {
           userDataSource: this.state.userDataSource.cloneWithRows(jsonResponse),
         });
       })
-      .catch((err) => {
-        console.log('AKI');
-        console.log(err);
-      });
+      .catch(console.log);
   }
   
-  onPress() {
-    console.log('AKI');
-    //navigation.navigate('Profile');
+  onPress(navigate) {
+    navigate('Profile')
   }
 
   renderRow(user, sectionId, rowId, highlightRow) {
-    console.log(this.props.navigation);
     const { navigate } = this.props.navigation;
+    //console.log(user);
     return(
-      <TouchableHighlight onPress={() => navigate('Profile', )}>
+      <TouchableHighlight onPress={() => this.onPress(navigate)}>
         <View style={styles.row}>
           <Text style={styles.rowText}>{user.name}</Text>
         </View>

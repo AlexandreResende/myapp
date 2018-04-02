@@ -8,9 +8,8 @@ class Component6 extends React.Component {
     title: 'Profile',
   };
 
-  constructor() {
-    super();
-    console.log(this.props);
+  constructor(props) {
+    super(props);
     /* this.state = {
       name: this.props.user.name,
       email: this.props.user.email,
