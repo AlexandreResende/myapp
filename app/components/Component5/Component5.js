@@ -33,15 +33,19 @@ class Component5 extends React.Component {
       .catch(console.log);
   }
   
-  onPress(navigate) {
-    navigate('Profile')
+  onPress(user, navigate) {
+    console.log(user);
+    this.setState({
+      user,
+    });
+    navigate('Profile', user)
   }
 
   renderRow(user, sectionId, rowId, highlightRow) {
     const { navigate } = this.props.navigation;
     //console.log(user);
     return(
-      <TouchableHighlight onPress={() => this.onPress(navigate)}>
+      <TouchableHighlight onPress={(user) => this.onPress(user, navigate)}>
         <View style={styles.row}>
           <Text style={styles.rowText}>{user.name}</Text>
         </View>

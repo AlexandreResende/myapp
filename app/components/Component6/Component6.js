@@ -9,6 +9,7 @@ class Component6 extends React.Component {
   };
 
   constructor(props) {
+    //console.log(props);
     super(props);
     /* this.state = {
       name: this.props.user.name,
